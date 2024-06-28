@@ -24,45 +24,6 @@ build_gcc_container() {
 		-t kernel-build-container:gcc-${GCC_VERSION} .
 }
 
-GCC_VERSION="4.9"
-UBUNTU_VERSION="16.04"
-build_gcc_container ${GCC_VERSION} ${UBUNTU_VERSION}
-
-GCC_VERSION="5"
-UBUNTU_VERSION="16.04"
-build_gcc_container ${GCC_VERSION} ${UBUNTU_VERSION}
-
-GCC_VERSION="6"
-UBUNTU_VERSION="18.04"
-build_gcc_container ${GCC_VERSION} ${UBUNTU_VERSION}
-
-GCC_VERSION="7"
-UBUNTU_VERSION="18.04"
-build_gcc_container ${GCC_VERSION} ${UBUNTU_VERSION}
-
-GCC_VERSION="8"
-UBUNTU_VERSION="20.04"
-build_gcc_container ${GCC_VERSION} ${UBUNTU_VERSION}
-
-GCC_VERSION="9"
-UBUNTU_VERSION="20.04"
-build_gcc_container ${GCC_VERSION} ${UBUNTU_VERSION}
-
-GCC_VERSION="10"
-UBUNTU_VERSION="20.04"
-build_gcc_container ${GCC_VERSION} ${UBUNTU_VERSION}
-
-GCC_VERSION="11"
-UBUNTU_VERSION="22.04"
-build_gcc_container ${GCC_VERSION} ${UBUNTU_VERSION}
-
-GCC_VERSION="12"
-UBUNTU_VERSION="22.04"
-build_gcc_container ${GCC_VERSION} ${UBUNTU_VERSION}
-
-GCC_VERSION="13"
-UBUNTU_VERSION="23.04"
-build_gcc_container ${GCC_VERSION} ${UBUNTU_VERSION}
 
 build_clang_container() {
 	echo -e "\nBuilding a container with CLANG_VERSION=$1 and GCC_VERSION=$2 from UBUNTU_VERSION=$3"
@@ -75,21 +36,6 @@ build_clang_container() {
 		--build-arg GID=$(id -g) \
 		-t kernel-build-container:clang-${CLANG_VERSION} .
 }
-
-CLANG_VERSION="12"
-GCC_VERSION="11"
-UBUNTU_VERSION="22.04"
-build_clang_container ${CLANG_VERSION} ${GCC_VERSION} ${UBUNTU_VERSION}
-
-CLANG_VERSION="13"
-GCC_VERSION="11"
-UBUNTU_VERSION="22.04"
-build_clang_container ${CLANG_VERSION} ${GCC_VERSION} ${UBUNTU_VERSION}
-
-CLANG_VERSION="14"
-GCC_VERSION="12"
-UBUNTU_VERSION="22.04"
-build_clang_container ${CLANG_VERSION} ${GCC_VERSION} ${UBUNTU_VERSION}
 
 CLANG_VERSION="15"
 GCC_VERSION="12"
